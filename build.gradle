@@ -1,0 +1,51 @@
+plugins {
+    id 'application'
+    id 'java'
+    id 'scala'
+    id 'org.openjfx.javafxplugin' version '0.0.8'
+}
+
+//mainClassName = 'AkkaClusterExample '
+//mainClassName = 'ScalaJavaFX'
+//mainClassName = 'fx'
+mainClassName = 'Main'
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+javafx {
+    version = '13'
+    modules = ['javafx.controls', 'javafx.fxml']
+}
+
+dependencies {
+//    compile group: 'com.typesafe.akka', name: "akka-actor", version: '2.6.9'
+
+    compile group: 'com.typesafe.akka', name: "akka-actor-typed_2.13", version: '2.6.9'
+    compile group: 'com.typesafe.akka', name: "akka-remote_2.13", version: '2.6.9'
+    compile group: 'com.typesafe.akka', name: "akka-cluster-typed_2.13", version: '2.6.9'
+    compile group: 'com.typesafe.akka', name: "akka-cluster_2.13", version: '2.6.9'
+
+//    compile group: 'com.typesafe.akka', name: "akka-actor-typed_2.12", version: '2.5.25'
+//    compile group: 'com.typesafe.akka', name: "akka-remote_2.12", version: '2.5.25'
+//    compile group: 'com.typesafe.akka', name: "akka-cluster_2.12", version: '2.5.25'
+
+//    compile group: 'com.typesafe.akka', name: "akka-actor-typed_2.11.4", version: '2.3.8'
+//    compile group: 'com.typesafe.akka', name: "akka-remote_2.11.4", version: '2.3.8'
+//    compile group: 'com.typesafe.akka', name: "akka-cluster_2.11.4", version: '2.3.8'
+
+    compile group: 'org.slf4j', name: "slf4j-simple", version: '1.7.21'
+}
+
+//jar {
+//    baseName = 'gs-gradle'
+//    version =  '0.1.0'
+//}
